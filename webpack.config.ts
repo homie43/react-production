@@ -1,37 +1,21 @@
 import path from "path";
-import HtmlWebackPlugin from "html-webpack-plugin";
+import { BuildPaths } from "./config/build/types/config";
 import webpack from "webpack";
+import { BuildWebpackConfig } from "./config/build/buildWebpackConfig";
 
-const config: webpack.Configuration = {
-  mode: "development",
+const paths: BuildPaths = {
   entry: path.resolve(__dirname, "src", "index.ts"), // __dirname это папка в которой мы находимся в данный момент
-  output: {
-    // куда и как делаем сборку приложения
-    filename: "[name].[contenthash].js",
-    path: path.resolve(__dirname, "build"),
-    clean: true, // чистит ненужные файлы
-  },
-  // плагины
-  plugins: [
-    new HtmlWebackPlugin({
-      template: path.resolve(__dirname, "public", "index.html"),
-    }),
-    new webpack.ProgressPlugin(),
-  ],
-  // обработка файлов, выходящих за рамки JS(ts, jpeg, svg, css итд)
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        use: "ts-loader",
-        exclude: /node_modules/,
-      },
-    ],
-  },
-  // при импорте не надо писать расширение
-  resolve: {
-    extensions: [".tsx", ".ts", ".js"],
-  },
+  build: path.resolve(__dirname, "build"),
+  html: path.resolve(__dirname, "public", "index.html"),
 };
+
+const mode = "development";
+const isDev = mode === "development";
+
+const config: webpack.Configuration = BuildWebpackConfig({
+  mode: "development",
+  paths,
+  isDev,
+});
 
 export default config;
