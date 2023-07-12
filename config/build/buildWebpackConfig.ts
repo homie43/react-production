@@ -1,29 +1,28 @@
+import { BuildOptions } from "./types/config";
 import webpack from "webpack";
 import path from "path";
-import { BuildOptions } from "./types/config";
-
 import { buildPlugins } from "./buildPlugins";
 import { buildLoaders } from "./buildLoaders";
 import { buildResolvers } from "./buildResolvers";
+import { buildDevServer } from "./buildDevServer";
 
-export function BuildWebpackConfig(options: BuildOptions): webpack.Configuration {
-  const { paths, mode } = options;
+export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
+  const { paths, mode, isDev } = options;
+
   return {
-    mode,
-    entry: paths.entry, // __dirname это папка в которой мы находимся в данный момент
+    mode: mode,
+    entry: paths.entry,
     output: {
-      // куда и как делаем сборку приложения
       filename: "[name].[contenthash].js",
       path: paths.build,
-      clean: true, // чистит ненужные файлы
+      clean: true,
     },
-    // плагины
     plugins: buildPlugins(options),
-    // обработка файлов, выходящих за рамки JS(ts, jpeg, svg, css итд)
     module: {
       rules: buildLoaders(),
     },
-    // при импорте не надо писать расширение
     resolve: buildResolvers(),
+    devtool: isDev ? "inline-source-map" : undefined,
+    devServer: isDev ? buildDevServer(options) : undefined,
   };
 }
