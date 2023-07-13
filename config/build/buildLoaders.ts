@@ -4,6 +4,18 @@ export function buildLoaders(): webpack.RuleSetRule[] {
   // вынес лоадеры в переменную
   // для строгого порядка
 
+  const cssLoaders = {
+    test: /\.s[ac]ss$/i,
+    use: [
+      // создает `style` из JS строк
+      "style-loader",
+      // трансллирует CSS в CommonJS
+      "css-loader",
+      // компилирует Sass в CSS
+      "sass-loader",
+    ],
+  };
+
   // Если используем TS, юзаем этот ладер
   // Если пишем на JS, то добавили бы babel-loader
   const typescriptLoader = {
@@ -12,5 +24,5 @@ export function buildLoaders(): webpack.RuleSetRule[] {
     exclude: /node_modules/,
   };
 
-  return [typescriptLoader];
+  return [typescriptLoader, cssLoaders];
 }

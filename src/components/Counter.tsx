@@ -1,4 +1,5 @@
 import React from "react";
+import "./counter.scss";
 
 export default function Counter() {
   const [count, setCount] = React.useState(0);
