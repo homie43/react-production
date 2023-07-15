@@ -2,8 +2,15 @@ h1 {
   color: red;
 }
 
-button {
+.btn {
   padding: 20px;
   background-color: green;
   border-radius: 10px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
