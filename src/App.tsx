@@ -1,12 +1,20 @@
+import { Route, Routes } from "react-router-dom";
 import Counter from "./components/Counter";
 import "./index.scss";
+import AboutPage from "./pages/AboutPage/AboutPage";
+import MainPage from "./pages/MainPage/MainPage";
+import { Link } from "react-router-dom";
 
 const App = () => {
   return (
     <div className="app">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus maiores ad autem et sit, cupiditate tempore
-      quisquam. Ut, et blanditiis sint aut nihil vero illo, praesentium possimus incidunt quam quisquam?
-      <Counter />
+      <Link to={"/"}>Главная</Link>
+      <Link to={"/about"}>О сайте</Link>
+      <Routes>
+        <Route path={"/about"} element={<AboutPage />} />
+        <Route path={"/"} element={<MainPage />} />
+        <Route path={"/counter"} element={<Counter />} />
+      </Routes>
     </div>
   );
 };
