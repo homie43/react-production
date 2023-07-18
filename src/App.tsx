@@ -11,7 +11,6 @@ const App = () => {
     <div className="app">
       <Link to={"/"}>Главная</Link>
       <Link to={"/about"}>О сайте</Link>
-
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path={"/about"} element={<AboutPageAsync />} />
