@@ -1,8 +1,12 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,CAAC,AAAC,CACA,MAAM,CAAE,CAAC,CACT,OAAO,CAAE,CAAC,CACV,UAAU,CAAE,UAAU,CACvB,AAED,AAAA,IAAI,AAAC,CACH,UAAU,CAAE,MAAM,CAClB,SAAS,CAAE,IAAI,CACf,KAAK,CAAE,IAAI,CACZ",
+    "mappings": "ACAA,AAAA,CAAC,AAAC,CACA,MAAM,CAAE,CAAC,CACT,OAAO,CAAE,CAAC,CACV,UAAU,CAAE,UAAU,CACvB,AAED,AAAA,KAAK,CACL,MAAM,CACN,QAAQ,CACR,MAAM,AAAC,CACL,MAAM,CAAE,CAAC,CACT,IAAI,CAAE,OAAO,CACd,ADPD,AAAA,IAAI,AAAC,CACH,UAAU,CAAE,MAAM,CAClB,SAAS,CAAE,IAAI,CACf,KAAK,CAAE,IAAI,CACZ",
     "sources": [
-        "../styles/index.scss"
+        "../styles/index.scss",
+        "../styles/reset.scss",
+        "../styles/themes/dark.scss",
+        "../styles/themes/normal.scss",
+        "../styles/variables/global.scss"
     ],
     "names": [],
     "file": "index.min.css"
