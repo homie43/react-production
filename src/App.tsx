@@ -1,8 +1,7 @@
 import { Suspense } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 import Counter from "./components/Counter";
-import "./index.scss";
-import { Link } from "react-router-dom";
+import "./styles/index.scss";
 import { AboutPageAsync } from "./pages/AboutPage/AboutPage.async";
 import { MainPageAsync } from "./pages/MainPage/MainPage.async";
 
