@@ -1,18 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Suspense } from "react";
 import { Route, Routes, Link } from "react-router-dom";
 import Counter from "./components/Counter";
 import "./styles/index.scss";
 import { AboutPageAsync } from "./pages/AboutPage/AboutPage.async";
 import { MainPageAsync } from "./pages/MainPage/MainPage.async";
-
-export enum Theme {
-  LIGHT = "light",
-  DARK = "dark",
-}
+import { Theme, ThemeContex } from "./theme/ThemeContext";
 
 const App = () => {
-  const [theme, setTheme] = React.useState<Theme>(Theme.LIGHT);
+  const { theme, setTheme } = useContext(ThemeContex);
 
   const toggleTheme = () => {
     setTheme(theme === Theme.DARK ? Theme.LIGHT : Theme.DARK);
