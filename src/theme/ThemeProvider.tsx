@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { LOCAL_STORAGE_THEME_KEY, ThemeContex, Theme } from "./ThemeContext";
+import { LOCAL_STORAGE_THEME_KEY, ThemeContext, Theme } from "./ThemeContext";
 
 const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
 
@@ -13,7 +13,7 @@ const ThemeProvider: FC = ({ children }) => {
     }),
     [theme]
   );
-  return <ThemeContex.Provider value={defaultProps}>{children}</ThemeContex.Provider>;
+  return <ThemeContext.Provider value={defaultProps}>{children}</ThemeContext.Provider>;
 };
 
 export default ThemeProvider;
