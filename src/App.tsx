@@ -1,11 +1,9 @@
-import React, { useContext } from "react";
 import { Suspense } from "react";
 import { Route, Routes, Link } from "react-router-dom";
 import Counter from "./components/Counter";
 import "./styles/index.scss";
 import { AboutPageAsync } from "./pages/AboutPage/AboutPage.async";
 import { MainPageAsync } from "./pages/MainPage/MainPage.async";
-import { Theme, ThemeContext } from "./theme/ThemeContext";
 import { useTheme } from "./theme/useTheme";
 
 const App = () => {
