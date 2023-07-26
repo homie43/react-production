@@ -1,11 +1,10 @@
 import { Suspense } from "react";
 import { Route, Routes, Link } from "react-router-dom";
-import Counter from "./components/Counter";
 import "./styles/index.scss";
-import { AboutPageAsync } from "./pages/AboutPage/AboutPage.async";
-import { MainPageAsync } from "./pages/MainPage/MainPage.async";
-import { useTheme } from "./theme/useTheme";
-import { classNames } from "./helpers/classNames/classNames";
+import { AboutPageAsync } from "../pages/AboutPage/AboutPage.async";
+import { MainPageAsync } from "../pages/MainPage/MainPage.async";
+import { useTheme } from "./providers/ThemeProvider/lib/useTheme";
+import { classNames } from "../helpers/classNames/classNames";
 
 const App = () => {
   const { theme, toggleTheme } = useTheme();
@@ -18,7 +17,6 @@ const App = () => {
         <Routes>
           <Route path={"/about"} element={<AboutPageAsync />} />
           <Route path={"/"} element={<MainPageAsync />} />
-          <Route path={"/counter"} element={<Counter />} />
         </Routes>
       </Suspense>
     </div>
