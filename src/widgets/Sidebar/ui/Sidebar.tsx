@@ -1,6 +1,7 @@
 import React from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import classes from "./Sidebar.module.scss";
+import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
 
 interface SidebarProps {
   className?: string;
@@ -16,6 +17,9 @@ export const Sidebar = ({ className }: SidebarProps) => {
   return (
     <div className={classNames(classes.Sidebar, { [classes.collapsed]: collapsed }, [className])}>
       <button onClick={onToggle}>toggle</button>
+      <div className={classes.switchers}>
+        <ThemeSwitcher />
+      </div>
     </div>
   );
 };
