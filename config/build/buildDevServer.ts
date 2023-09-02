@@ -6,5 +6,6 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration {
     port: options.port,
     open: true, // автооткрытие страницы с приложением
     historyApiFallback: true, // проксирует запросы через index.html // для SPA
+    hot: true,
   };
 }
