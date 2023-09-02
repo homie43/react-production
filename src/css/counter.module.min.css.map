@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,EAAE,AAAC,CACD,KAAK,CAAE,GAAG,CACX,AAED,AAAA,IAAI,AAAC,CACH,OAAO,CAAE,IAAI,CACb,gBAAgB,CAAE,KAAK,CACvB,aAAa,CAAE,IAAI,CACpB,AAED,AAAA,QAAQ,AAAC,CACP,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,GAAG,CAAE,IAAI,CACV",
-    "sources": [
-        "../components/counter.module.scss"
-    ],
-    "names": [],
-    "file": "counter.module.min.css"
-}
