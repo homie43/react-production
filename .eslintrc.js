@@ -42,6 +42,7 @@ module.exports = {
         'import/order': 'off',
         'jsx-quotes': 'off',
         'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'max-len': ['error', { ignoreComments: true }],
     },
     globals: {
         __IS_DEV__: true,
