@@ -1,5 +1,6 @@
-import React, { ErrorInfo, ReactNode } from 'react';
+import React, { ErrorInfo, ReactNode, Suspense } from 'react';
 import { withTranslation } from 'react-i18next';
+import { PageError } from 'widgets/PageError';
 
 interface ErrorBoundaryProps {
     children: ReactNode;
@@ -33,7 +34,11 @@ class ErrorBoundary extends React.Component<
         const { children } = this.props;
         if (hasError) {
             // You can render any custom fallback UI
-            return <h1>Something went wrong.</h1>;
+            return (
+                <Suspense fallback=''>
+                    <PageError />
+                </Suspense>
+            );
         }
 
         return children;
