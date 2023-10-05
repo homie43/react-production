@@ -1,25 +1,18 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button/Button';
 
-interface BugButtonProps {
-    className?: string;
-}
-
-export const BugButton = ({ className }: BugButtonProps) => {
+// Компонент для тестирования ErrorBoundary
+export const BugButton = () => {
     const [error, setError] = React.useState(false);
-
+    const { t } = useTranslation();
     const onThrow = () => setError(true);
 
     React.useEffect(() => {
-        throw new Error();
-    }, []);
+        if (error) {
+            throw new Error();
+        }
+    }, [error]);
 
-    return (
-        <Button
-            onClick={onThrow}
-            // eslint-disable-next-line i18next/no-literal-string
-        >
-            throw error
-        </Button>
-    );
+    return <Button onClick={onThrow}>{t('throw error')}</Button>;
 };
