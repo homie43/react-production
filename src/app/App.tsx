@@ -7,10 +7,6 @@ import { Sidebar } from 'widgets/Sidebar';
 import './styles/index.scss';
 
 const App = () => {
-    React.useEffect(() => {
-        throw new Error();
-    }, []);
-
     const { theme } = useTheme();
     return (
         <div className={classNames('app', {}, [theme])}>
