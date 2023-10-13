@@ -41,7 +41,10 @@ module.exports = {
         'comma-dangle': 'off',
         'import/order': 'off',
         'jsx-quotes': 'off',
-        'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'i18next/no-literal-string': [
+            'error',
+            { markupOnly: true, ignoreAttribute: ['data-testid'] },
+        ],
         'max-len': ['error', { ignoreComments: true, code: 100 }],
         'arrow-body-style': 'off',
     },
