@@ -31,7 +31,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         },
     };
 
-    const cssLoaders = buildCssLoaders(isDev);
+    const cssLoaders = buildCssLoaders(isDev); // перенес лоадер в отдельный компонент для настройки storybook
 
     // Если используем TS, юзаем этот лоадер
     // Если пишем на JS, то добавили бы babel-loader
