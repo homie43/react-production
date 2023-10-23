@@ -5,7 +5,6 @@ export function classNames(
     mods: Mods = {},
     additional: string[] = []
 ): string {
-    // главный класс, последний - класс, который будет подставляться(тема)
     return [
         cls,
         ...additional.filter(Boolean),
