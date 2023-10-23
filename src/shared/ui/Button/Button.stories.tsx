@@ -17,21 +17,18 @@ export const Primary = Template.bind({});
 Primary.args = {
     children: 'Text',
 };
-Primary.decorators = [ThemeDecorator(Theme.LIGHT)];
 
 export const Clear = Template.bind({});
 Clear.args = {
     children: 'Text',
     theme: ThemeButton.CLEAR,
 };
-Clear.decorators = [ThemeDecorator(Theme.LIGHT)];
 
 export const Outline = Template.bind({});
 Outline.args = {
     children: 'Text',
     theme: ThemeButton.OUTLINE,
 };
-Outline.decorators = [ThemeDecorator(Theme.LIGHT)];
 
 export const OutlineDark = Template.bind({});
 OutlineDark.args = {
