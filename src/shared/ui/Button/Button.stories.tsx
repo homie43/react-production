@@ -1,7 +1,6 @@
-import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
 import { Button, ThemeButton } from './Button';
+import 'app/styles/index.scss';
 
 export default {
     title: 'shared/Button',
@@ -22,4 +21,10 @@ export const Clear = Template.bind({});
 Clear.args = {
     children: 'Text',
     theme: ThemeButton.CLEAR,
+};
+
+export const Outline = Template.bind({});
+Outline.args = {
+    children: 'Text',
+    theme: ThemeButton.OUTLINE,
 };
