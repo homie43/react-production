@@ -12,6 +12,7 @@ export default {
 } as ComponentMeta<typeof AboutPage>;
 
 const Template: ComponentStory<typeof AboutPage> = (args) => (
+    // @ts-ignore: error message
     <AboutPage {...args} />
 );
 
