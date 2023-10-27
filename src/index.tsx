@@ -7,6 +7,7 @@ import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 // На данном этапе готова структура приложения
 // Начинаю планировать архитектуру
 // Кажды путь буд подробно комментирвоать
+// update loki - коммент дл пуша
 
 render(
     <BrowserRouter>
