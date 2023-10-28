@@ -5,6 +5,8 @@ import classes from './Button.module.scss';
 export enum ThemeButton {
     CLEAR = 'clear', // кнопка без всего(рамок, бэкграунда итд)
     OUTLINE = 'outline',
+    BACKGROUND = 'background',
+    BACKGROUND_INVERTED = 'bacgroundInverted',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
