@@ -32,8 +32,9 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 data-testid='sidebar-toggle'
                 type='button'
                 onClick={onToggle}
+                className={classes.collapseBtn}
             >
-                {t('Переключить')}
+                {collapsed ? '>' : '<'}
             </Button>
             <div className={classes.switchers}>
                 <ThemeSwitcher />
