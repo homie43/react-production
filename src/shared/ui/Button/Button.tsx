@@ -9,18 +9,33 @@ export enum ButtonTheme {
     BACKGROUND_INVERTED = 'backgroundInverted',
 }
 
+export enum ButtonSize {
+    M = 'size_m',
+    L = 'size_l',
+    XL = 'size_xl',
+}
+
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     theme?: ButtonTheme;
     square?: boolean;
+    size?: ButtonSize;
 }
 
 export const Button: FC<ButtonProps> = (props) => {
-    const { className, children, square, theme, ...otherProps } = props;
+    const {
+        className,
+        children,
+        square,
+        size = ButtonSize.M,
+        theme,
+        ...otherProps
+    } = props;
 
     const mods: Record<string, boolean> = {
         [classes[theme]]: true,
         [classes.square]: square,
+        [classes[size]]: true,
     };
 
     return (
