@@ -6,17 +6,12 @@ interface ModalProps {
     className?: string;
     children?: ReactNode;
     isOpen?: boolean;
-    setIsOpen?: () => void;
+    onClose?: () => void;
 }
 
 const TIMEOUT_DELAY = 300;
 
-export const Modal = ({
-    className,
-    children,
-    isOpen,
-    setIsOpen,
-}: ModalProps) => {
+export const Modal = ({ className, children, isOpen, onClose }: ModalProps) => {
     //
     const [isClosing, setIsClosing] = React.useState(false); // состояние отвечающее за закрытое окно
     const timeRef = React.useRef<ReturnType<typeof setTimeout>>();
@@ -24,15 +19,15 @@ export const Modal = ({
     // закрыть Modal
     const closeHandler = React.useCallback(() => {
         // useCallback мемоизирует значение функции, чтобы она каждый раз не отрабатывала заново
-        if (setIsOpen) {
+        if (onClose) {
             setIsClosing(true);
             // плавное закрытие Modal
             timeRef.current = setTimeout(() => {
-                setIsOpen();
+                onClose();
                 setIsClosing(false);
             }, TIMEOUT_DELAY);
         }
-    }, [setIsOpen]);
+    }, [onClose]);
 
     // убираем всплытие событий
     const onContentClick = (e: React.MouseEvent) => {

@@ -14,7 +14,7 @@ const App = () => {
         <div className={classNames('app', {}, [theme])}>
             <React.Suspense fallback=''>
                 <button onClick={() => setIsOpen(true)}>Open Modal</button>
-                <Modal isOpen={isOpen} setIsOpen={() => setIsOpen(false)}>
+                <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Velit, fuga? Velit sapiente vitae molestiae delectus ad
                     deserunt soluta culpa, voluptatum error eos nulla beatae id
