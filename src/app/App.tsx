@@ -1,10 +1,9 @@
 import React from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { AppRouter } from './providers/router';
+import { useTheme } from 'app/providers/ThemeProvider';
+import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widgets/Navbar';
-import { useTheme } from './providers/ThemeProvider';
 import { Sidebar } from 'widgets/Sidebar';
-import './styles/index.scss';
 import { Modal } from 'shared/ui/Modal/Modal';
 
 const App = () => {
@@ -13,8 +12,6 @@ const App = () => {
     return (
         <div className={classNames('app', {}, [theme])}>
             <React.Suspense fallback=''>
-                <button onClick={() => setIsOpen(true)}>Open Modal</button>
-
                 <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Velit, fuga? Velit sapiente vitae molestiae delectus ad
@@ -22,6 +19,7 @@ const App = () => {
                     doloremque fugit fuga optio nemo!
                 </Modal>
                 <Navbar />
+                <button onClick={() => setIsOpen(true)}>Open Modal</button>
                 <div className='content-page'>
                     <Sidebar />
                     <AppRouter />

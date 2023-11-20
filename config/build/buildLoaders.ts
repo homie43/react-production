@@ -1,6 +1,6 @@
 import webpack from 'webpack';
-import { BuildOptions } from './types/config';
 import { buildCssLoader } from './loaders/buildCssLoader';
+import { BuildOptions } from './types/config';
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     // вынес лоадеры в переменную
@@ -31,7 +31,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         },
     };
 
-    const cssLoaders = buildCssLoader(isDev); // перенес лоадер в отдельный компонент для настройки storybook
+    const cssLoader = buildCssLoader(isDev); // перенес лоадер в отдельный компонент для настройки storybook
 
     // Если используем TS, юзаем этот лоадер
     // Если пишем на JS, то добавили бы babel-loader
@@ -50,5 +50,5 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         ],
     };
 
-    return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoaders];
+    return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader];
 }

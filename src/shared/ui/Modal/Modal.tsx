@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import classes from './Modal.module.scss';
-import { Portal } from '../Portal/Portal';
+import { Portal } from 'shared/ui/Portal/Portal';
 
 interface ModalProps {
     className?: string;
