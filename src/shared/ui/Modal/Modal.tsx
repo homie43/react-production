@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import classes from './Modal.module.scss';
 import { Portal } from 'shared/ui/Portal/Portal';
+import { useTheme } from 'app/providers/ThemeProvider';
 
 interface ModalProps {
     className?: string;
@@ -16,6 +17,7 @@ export const Modal = ({ className, children, isOpen, onClose }: ModalProps) => {
     //
     const [isClosing, setIsClosing] = React.useState(false); // состояние отвечающее за закрытое окно
     const timeRef = React.useRef<ReturnType<typeof setTimeout>>();
+    const { theme } = useTheme();
 
     // закрыть Modal
     const closeHandler = React.useCallback(() => {
@@ -58,6 +60,7 @@ export const Modal = ({ className, children, isOpen, onClose }: ModalProps) => {
     const mods: Record<string, boolean> = {
         [classes.opened]: isOpen,
         [classes.isClosing]: isClosing,
+        [classes[theme]]: true,
     };
 
     return (

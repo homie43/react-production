@@ -4,6 +4,7 @@ import classes from './Button.module.scss';
 
 export enum ButtonTheme {
     CLEAR = 'clear', // кнопка без всего(рамок, бэкграунда итд)
+    CLEAR_INVERTED = 'clearInverted',
     OUTLINE = 'outline',
     BACKGROUND = 'background',
     BACKGROUND_INVERTED = 'backgroundInverted',
